@@ -33,7 +33,7 @@
                             <a class="btn btn-primary" href=" {{ route('admin.project.show', $project) }} ">
                                 <i class="fa-regular fa-eye"></i>
                             </a>
-                            <a class="btn btn-warning" href="">
+                            <a class="btn btn-warning" href=" {{ route('admin.project.edit', $project) }} ">
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
                             @include('admin.partials.form-delete', [ 'title' => $project->name, 'route' => 'admin.project.destroy', 'element'=> $project])

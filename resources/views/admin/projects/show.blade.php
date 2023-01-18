@@ -16,6 +16,9 @@
         <a class="btn btn-info" href=" {{ route('admin.project.index') }} ">
             TABELLA PROGETTI
         </a>
+        <a class="btn btn-warning" href=" {{ route('admin.project.edit', $project) }} ">
+            <i class="fa-solid fa-pencil"></i>
+        </a>
         @include('admin.partials.form-delete', [ 'title' => $project->name, 'route' => 'admin.project.destroy', 'element'=> $project])
     </div>
     <div class="mf-admin-card box-edit p-2">
