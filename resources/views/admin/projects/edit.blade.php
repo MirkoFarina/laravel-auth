@@ -20,7 +20,7 @@
             </a>
             @include('admin.partials.form-delete', [ 'title' => $project->name, 'route' => 'admin.project.destroy', 'element'=> $project])
         </div>
-        <form action=" {{ route('admin.project.update', $project) }} " method="POST">
+        <form class="box-edit p-3" action=" {{ route('admin.project.update', $project) }} " method="POST">
             @csrf
             @method('PUT')
             <div class="mb-3">

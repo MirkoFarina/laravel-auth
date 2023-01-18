@@ -13,7 +13,7 @@
                 TABELLA PROGETTI
             </a>
         </div>
-        <form action=" {{ route('admin.project.store') }} " method="POST">
+        <form class="box-edit p-3" action=" {{ route('admin.project.store') }} " method="POST">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label @error('name') text-danger @enderror">TITOLO *</label>
