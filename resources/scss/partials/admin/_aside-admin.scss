@@ -1,0 +1,5 @@
+@use "../variables" as *;
+#nav-aside {
+    background-color: $primary-color;
+    height: calc(100vh - 70px);
+}

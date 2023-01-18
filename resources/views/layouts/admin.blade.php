@@ -8,8 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> Portofolio  @yield('title') </title>
 
+    <!-- Fonts Awesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous'/>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,15 +22,24 @@
 </head>
 
 <body>
-    <div id="app">
+    @include('admin.partials.header')
 
+    <div class="container-fluid">
+        <div class="row">
+            @auth()
+                <div class="col-1 p-0">
+                    @include('admin.partials.aside')
+                </div>
+            @endauth
 
-
-        @include('admin.partials.header')
-        <main class="">
-            @yield('content')
-        </main>
+            <div @auth class="col-11" @endauth>
+                <main id="main-admin">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
     </div>
+
 </body>
 
 </html>

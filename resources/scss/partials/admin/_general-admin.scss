@@ -1,0 +1,22 @@
+@use "../variables" as *;
+#admin-header, #nav-aside {
+    a {
+        color: $secondary-color;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all .4s;
+        &:hover {
+            color: white;
+        }
+        &.active {
+            color: white;
+            padding-bottom: 5px;
+            border-bottom: white 1px solid;
+        }
+    }
+}
+
+#main-admin {
+    overflow-y: auto;
+    height: calc(100vh - 70px);
+}
