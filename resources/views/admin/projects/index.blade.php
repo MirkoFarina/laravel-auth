@@ -36,9 +36,7 @@
                             <a class="btn btn-warning" href="">
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
-                            <a class="btn btn-danger" href="">
-                                <i class="fa-solid fa-trash-arrow-up"></i>
-                            </a>
+                            @include('admin.partials.form-delete', [ 'title' => $project->name, 'route' => 'admin.project.destroy', 'element'=> $project])
                         </td>
                     </tr>
                 @endforeach
