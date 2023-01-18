@@ -10,7 +10,7 @@
             <h1>
                 TABELLA PROGETTI
             </h1>
-            <a class="btn btn-success" href="">
+            <a class="btn btn-success" href=" {{ route('admin.project.create') }} ">
                 <i class="fa-solid fa-plus"></i>
             </a>
         </div>

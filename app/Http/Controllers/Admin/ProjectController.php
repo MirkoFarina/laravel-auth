@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
@@ -35,9 +36,15 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectRequest $request)
     {
-        //
+        $project = $request->all();
+        $new_project = new Project();
+        $project['slug'] = Project::generator_slug($project['name']);
+        $new_project->fill($project);
+        $new_project->save();
+
+        return redirect()->route('admin.project.show', $new_project);
     }
 
     /**

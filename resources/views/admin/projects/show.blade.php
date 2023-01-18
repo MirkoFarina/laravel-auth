@@ -10,12 +10,13 @@
         <h1>
             DETTAGLIO {{ $project->name }}
         </h1>
-        <a class="btn btn-success" href="">
+        <a class="btn btn-success" href="{{ route('admin.project.create') }}">
             <i class="fa-solid fa-plus"></i>
         </a>
         <a class="btn btn-info" href=" {{ route('admin.project.index') }} ">
             TABELLA PROGETTI
         </a>
+        @include('admin.partials.form-delete', [ 'title' => $project->name, 'route' => 'admin.project.destroy', 'element'=> $project])
     </div>
     <div class="mf-admin-card box-edit p-2">
         <img src="{{ $project->cover_image }} " class="card-img-top" alt=" {{ $project->name }} ">
