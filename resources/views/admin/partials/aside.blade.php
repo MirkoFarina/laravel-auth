@@ -11,7 +11,7 @@
             </a>
         </li>
         <li class="ps-3">
-            <a href=" {{ route('admin.project.index') }} " class=" {{ Route::CurrentRouteName() === 'admin.project.index' ? 'active' : '' }} " >
+            <a href=" {{ route('admin.project.index') }} " class=" {{ Route::CurrentRouteName() === 'admin.project.index' || Route::CurrentRouteName() === 'admin.project.create' || Route::CurrentRouteName() === 'admin.project.edit' || Route::CurrentRouteName() === 'admin.project.show' ? 'active' : '' }} " >
                 <i class="fa-solid fa-chart-simple"></i> PROJECTS
             </a>
         </li>

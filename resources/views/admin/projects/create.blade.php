@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    | CREATE
+    | PROJECTS |  CREATE
 @endsection
 
 @section('content')

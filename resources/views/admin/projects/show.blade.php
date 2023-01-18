@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    | DETAILS
+    | PROJECTS |  DETAILS
 @endsection
 
 
