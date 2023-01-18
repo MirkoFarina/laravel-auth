@@ -24,7 +24,7 @@
 <body>
     @include('admin.partials.header')
 
-    <div class="container-fluid">
+    <div class="container-fluid mf-admin-container">
         <div class="row">
             @auth()
                 <div class="col-1 p-0">
@@ -32,7 +32,7 @@
                 </div>
             @endauth
 
-            <div @auth class="col-11" @endauth>
+            <div @auth class="col-11 p-0" @endauth>
                 <main id="main-admin">
                     @yield('content')
                 </main>

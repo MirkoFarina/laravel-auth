@@ -1,4 +1,29 @@
 @use "../variables" as *;
+
+//UTILITY
+    .box-edit {
+        box-shadow: 1px 8px 12px 0px rgba(0,0,0,0.68);
+        border-radius: 5px;
+    }
+
+    .secondary-color {
+        color: $secondary-color;
+    }
+
+    .mf-admin-container {
+        background-color: $primary-color;
+    }
+
+    .mf-admin-card {
+        background-color: $primary-color;
+        width: 500px;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+//  /UTILITY
+
+
 #admin-header, #nav-aside {
     a {
         color: $secondary-color;

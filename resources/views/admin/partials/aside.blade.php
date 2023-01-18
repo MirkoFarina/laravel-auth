@@ -10,5 +10,10 @@
                 <i class="fa-solid fa-chart-simple"></i> DASHBOARD
             </a>
         </li>
+        <li class="ps-3">
+            <a href=" {{ route('admin.project.index') }} " class=" {{ Route::CurrentRouteName() === 'admin.project.index' ? 'active' : '' }} " >
+                <i class="fa-solid fa-chart-simple"></i> PROJECTS
+            </a>
+        </li>
     </ul>
 </div>
