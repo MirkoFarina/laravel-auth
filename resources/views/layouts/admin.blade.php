@@ -24,7 +24,7 @@
 
 
 
-
+        @include('admin.partials.header')
         <main class="">
             @yield('content')
         </main>
