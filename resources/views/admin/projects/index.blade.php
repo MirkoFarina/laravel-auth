@@ -10,10 +10,12 @@
             <h1>
                 TABELLA PROGETTI
             </h1>
-            <a class="btn btn-success" href=" {{ route('admin.project.create') }} ">
-                <i class="fa-solid fa-plus"></i>
-            </a>
         </div>
+        @if (session('delete'))
+            <div>
+                {{ session('delete') }}
+            </div>
+        @endif
         <table class="table table-dark table-striped mt-5 box-edit">
             <thead>
                 <tr>
@@ -43,7 +45,7 @@
             </tbody>
         </table>
 
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center mf-pagination">
             {{ $projects->links() }}
         </div>
     </div>

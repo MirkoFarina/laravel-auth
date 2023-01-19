@@ -9,9 +9,6 @@
             <h1>
                 MODIFICA {{ $project->name }}
             </h1>
-            <a class="btn btn-success" href="{{ route('admin.project.create') }}">
-                <i class="fa-solid fa-plus"></i>
-            </a>
             <a class="btn btn-primary" href=" {{ route('admin.project.show', $project) }} ">
                 <i class="fa-regular fa-eye"></i>
             </a>

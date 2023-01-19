@@ -16,7 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(15);
+        $projects = Project::paginate(10);
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -101,6 +101,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('admin.project.index');
+        return redirect()->route('admin.project.index')->with('delete', 'Post eliminato corretamente');
     }
 }

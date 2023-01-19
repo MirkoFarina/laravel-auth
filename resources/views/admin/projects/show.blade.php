@@ -10,9 +10,6 @@
         <h1>
             DETTAGLIO {{ $project->name }}
         </h1>
-        <a class="btn btn-success" href="{{ route('admin.project.create') }}">
-            <i class="fa-solid fa-plus"></i>
-        </a>
         <a class="btn btn-info" href=" {{ route('admin.project.index') }} ">
             TABELLA PROGETTI
         </a>

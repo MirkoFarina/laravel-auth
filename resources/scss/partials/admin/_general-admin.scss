@@ -45,3 +45,20 @@
     overflow-y: auto;
     height: calc(100vh - 70px);
 }
+
+.mf-pagination {
+    .pagination {
+        .page-item.active .page-link {
+            color: white;
+        }
+        .page-link{
+            border: none;
+            background-color: $primary-color;
+            color: $secondary-color;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: .9rem;
+        }
+    }
+
+}
