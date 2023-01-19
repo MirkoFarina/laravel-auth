@@ -23,7 +23,7 @@
     }
 //  /UTILITY
 
-
+// HEADER AND ASIDE
 #admin-header, #nav-aside {
     a {
         color: $secondary-color;
@@ -41,11 +41,27 @@
     }
 }
 
+
+// LAYOUT ADMIN
 #main-admin {
     overflow-y: auto;
     height: calc(100vh - 70px);
 }
 
+// PROJECTS > INDEX
+
+table {
+    a {
+        color: white;
+        text-decoration: none;
+        transition: all .5s;
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}
+
+// PAGINATION IN INDEX > PROJECTS
 .mf-pagination {
     .pagination {
         .page-item.active .page-link {
@@ -62,3 +78,5 @@
     }
 
 }
+
+

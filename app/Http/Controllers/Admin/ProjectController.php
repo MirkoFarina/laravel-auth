@@ -16,8 +16,17 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(10);
-        return view('admin.projects.index', compact('projects'));
+        $projects = Project::orderby('id','desc')->paginate(10);
+        $direction = 'desc';
+        return view('admin.projects.index', compact('projects', 'direction'));
+    }
+
+    public function groupby($column, $direction){
+        $direction = $direction === 'desc' ? 'asc' : 'desc';
+
+        $projects = Project::orderby($column ,$direction)->paginate(10);
+
+        return view('admin.projects.index', compact('projects', 'direction'));
     }
 
     /**

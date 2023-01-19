@@ -15,8 +15,8 @@
         <table class="table table-dark table-striped mt-5 box-edit">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">NOME</th>
+                    <th scope="col"><a href=" {{route('admin.project.groupby', ['id', $direction])}} ">ID <i class="fa-solid fa-sort"></i></a></th>
+                    <th scope="col"><a href="{{route('admin.project.groupby', ['name', $direction])}} ">NOME <i class="fa-solid fa-sort"></i></a></th>
                     <th scope="col">CLIENT NAME</th>
                     <th scope="col">ACTION</th>
                 </tr>

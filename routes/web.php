@@ -16,6 +16,7 @@ Route::middleware(['auth','verified'])
     ->group(function(){
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('project', ProjectController::class);
+        Route::get('/groupby/{column}/{direction}',[ProjectController::class, 'groupby'])->name('project.groupby');
 });
 
 Route::middleware('auth')->group(function () {
