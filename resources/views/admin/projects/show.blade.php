@@ -18,6 +18,7 @@
         </a>
         @include('admin.partials.form-delete', [ 'title' => $project->name, 'route' => 'admin.project.destroy', 'element'=> $project])
     </div>
+    @include('admin.partials.messages-session')
     <div class="mf-admin-card box-edit p-2">
         <img src="{{ $project->cover_image }} " class="card-img-top" alt=" {{ $project->name }} ">
         <div class="card-body p-5">

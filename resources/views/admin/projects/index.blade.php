@@ -11,11 +11,7 @@
                 TABELLA PROGETTI
             </h1>
         </div>
-        @if (session('delete'))
-            <div>
-                {{ session('delete') }}
-            </div>
-        @endif
+        @include('admin.partials.messages-session')
         <table class="table table-dark table-striped mt-5 box-edit">
             <thead>
                 <tr>

@@ -44,7 +44,7 @@ class ProjectController extends Controller
         $new_project->fill($project);
         $new_project->save();
 
-        return redirect()->route('admin.project.show', $new_project);
+        return redirect()->route('admin.project.show', $new_project)->with('messages', 'POST AGGIUNTO CON SUCCESSO');
     }
 
     /**
@@ -88,7 +88,7 @@ class ProjectController extends Controller
 
         $project->update($form_project);
 
-        return redirect()->route('admin.project.index');
+        return redirect()->route('admin.project.index')->with('messages', 'POST MODIFICATO CON SUCCESSO');
     }
 
     /**
