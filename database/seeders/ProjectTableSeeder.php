@@ -22,7 +22,6 @@ class ProjectTableSeeder extends Seeder
             $new_project->slug = Project::generator_slug($new_project->name);
             $new_project->client_name = $faker->words(3, true);
             $new_project->summary = $faker->paragraph();
-            $new_project->cover_image = 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png';
             $new_project->save();
         }
     }
