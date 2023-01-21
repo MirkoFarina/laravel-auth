@@ -7,16 +7,18 @@
 @section('content')
 <div class="container d-flex flex-column align-items-center secondary-color">
     <div class="mb-5 text-center">
-        <h1>
+        <h1 class="box-edit d-inline-block my-2 p-2">
             DETTAGLIO {{ $project->name }}
         </h1>
-        <a class="btn btn-info" href=" {{ route('admin.project.index') }} ">
-            TABELLA PROGETTI
-        </a>
-        <a class="btn btn-warning" href=" {{ route('admin.project.edit', $project) }} ">
-            <i class="fa-solid fa-pencil"></i>
-        </a>
-        @include('admin.partials.form-delete', [ 'title' => $project->name, 'route' => 'admin.project.destroy', 'element'=> $project])
+        <div>
+            <a class="btn btn-info" href=" {{ route('admin.project.index') }} ">
+                TABELLA PROGETTI
+            </a>
+            <a class="btn btn-warning" href=" {{ route('admin.project.edit', $project) }} ">
+                <i class="fa-solid fa-pencil"></i>
+            </a>
+            @include('admin.partials.form-delete', [ 'title' => $project->name, 'route' => 'admin.project.destroy', 'element'=> $project])
+        </div>
     </div>
     @include('admin.partials.messages-session')
     <div class="mf-admin-card box-edit p-2">

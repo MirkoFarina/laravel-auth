@@ -21,6 +21,21 @@
             transform: scale(1.1);
         }
     }
+
+    .mf-btn-search {
+        border: none;
+        padding: 5px 10px;
+        background-color: $secondary-color;
+        color: white;
+        transition: all .4s;
+        &:focus {
+            outline: 1px solid lighten($secondary-color, 30%);
+        }
+        &:hover {
+            background-color: white;
+            color: $secondary-color;
+        }
+    }
 //  /UTILITY
 
 // HEADER AND ASIDE

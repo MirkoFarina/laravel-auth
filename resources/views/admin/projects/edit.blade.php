@@ -6,16 +6,18 @@
 @section('content')
     <div class="container secondary-color">
         <div class="mb-5 text-center">
-            <h1>
+            <h1 class="box-edit d-inline-block my-2 p-2">
                 MODIFICA {{ $project->name }}
             </h1>
-            <a class="btn btn-primary" href=" {{ route('admin.project.show', $project) }} ">
-                <i class="fa-regular fa-eye"></i>
-            </a>
-            <a class="btn btn-info" href=" {{ route('admin.project.index') }} ">
-                TABELLA PROGETTI
-            </a>
-            @include('admin.partials.form-delete', [ 'title' => $project->name, 'route' => 'admin.project.destroy', 'element'=> $project])
+            <div>
+                <a class="btn btn-primary" href=" {{ route('admin.project.show', $project) }} ">
+                    <i class="fa-regular fa-eye"></i>
+                </a>
+                <a class="btn btn-info" href=" {{ route('admin.project.index') }} ">
+                    TABELLA PROGETTI
+                </a>
+                @include('admin.partials.form-delete', [ 'title' => $project->name, 'route' => 'admin.project.destroy', 'element'=> $project])
+            </div>
         </div>
         <form class="box-edit p-3" action=" {{ route('admin.project.update', $project) }} " method="POST" enctype="multipart/form-data">
             @csrf

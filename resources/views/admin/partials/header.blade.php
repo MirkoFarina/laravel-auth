@@ -1,5 +1,5 @@
 <header id="admin-header">
-    <nav class="navbar h-100 shadow-sm px-3">
+    <nav class="navbar h-100 shadow px-3">
 
         <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
             <div class="logo_laravel">
@@ -14,7 +14,6 @@
         </ul>
 
         <div class="d-flex" id="navbarSupportedContent">
-
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto d-flex flex-row">
                 <!-- Authentication Links -->

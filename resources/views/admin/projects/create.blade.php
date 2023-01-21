@@ -6,12 +6,14 @@
 @section('content')
     <div class="container secondary-color">
         <div class="mb-5 text-center">
-            <h1>
+            <h1 class="box-edit d-inline-block my-2 p-2">
                 AGGIUNGI NUOVO ELEMENTO
             </h1>
-            <a class="btn btn-info" href=" {{ route('admin.project.index') }} ">
-                TABELLA PROGETTI
-            </a>
+            <div>
+                <a class="btn btn-info" href=" {{ route('admin.project.index') }} ">
+                    TABELLA PROGETTI
+                </a>
+            </div>
         </div>
         <form class="box-edit p-3" action=" {{ route('admin.project.store') }} " method="POST" enctype="multipart/form-data">
             @csrf
