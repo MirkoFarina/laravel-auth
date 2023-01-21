@@ -25,7 +25,8 @@ class ProjectRequest extends FormRequest
     {
         return [
             'name'=> 'required| max:150',
-            'client_name'=> 'required| max:150'
+            'client_name'=> 'required| max:150',
+            'cover_image' => 'max:5120'
         ];
     }
 
@@ -36,6 +37,7 @@ class ProjectRequest extends FormRequest
             'name.max' => 'Consentito massimo 150 caratteri',
             'client_name.required' => 'Inserire il client',
             'client_name.max' => 'Consentito massimo 150 caratteri',
+            'cover_image' => 'Grandezza massima 5MB'
         ];
     }
 }
