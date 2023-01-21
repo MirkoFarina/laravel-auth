@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -48,6 +50,12 @@ class ProjectController extends Controller
     public function store(ProjectRequest $request)
     {
         $project = $request->all();
+        if(array_key_exists('cover_image', $project)) {
+            $project['image_original_name'] = $request->file('cover_image')->getClientOriginalName();
+
+            $project['cover_image'] = Storage::put('uploads', $project['cover_image']);
+        }
+
         $new_project = new Project();
         $project['slug'] = Project::generator_slug($project['name']);
         $new_project->fill($project);
@@ -89,6 +97,14 @@ class ProjectController extends Controller
     {
         $form_project = $request->all();
 
+        if(array_key_exists('cover_image', $form_project)){
+            if($project->cover_image) {
+                Storage::disk('public')->delete($project->cover_image);
+            }
+            $form_project['image_original_name'] = $request->file('cover_image')->getClientOriginalName();
+            $form_project['cover_image'] = Storage::put('uploads', $form_project['cover_image']);
+        }
+
         if($project->name != $form_project['name']) {
             $form_project['slug'] = Project::generator_slug($form_project['name']);
         } else {
@@ -97,7 +113,7 @@ class ProjectController extends Controller
 
         $project->update($form_project);
 
-        return redirect()->route('admin.project.index')->with('messages', 'POST MODIFICATO CON SUCCESSO');
+        return redirect()->route('admin.project.show', $project)->with('messages', 'POST MODIFICATO CON SUCCESSO');
     }
 
     /**
@@ -108,6 +124,10 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if($project->cover_image) {
+            Storage::disk('public')->delete($project->cover_image);
+        }
+
         $project->delete();
 
         return redirect()->route('admin.project.index')->with('delete', 'Post eliminato corretamente');

@@ -20,7 +20,7 @@
     </div>
     @include('admin.partials.messages-session')
     <div class="mf-admin-card box-edit p-2">
-        <img src="{{ $project->cover_image }} " class="card-img-top" alt=" {{ $project->name }} ">
+        <img src="{{ asset('storage/' . $project->cover_image) }} " class="card-img-top" alt=" {{ $project->image_original_name }} ">
         <div class="card-body p-5">
           <h5 class="card-title">{{ $project->name }}</h5>
           <p class="card-text">{{ $project->client_name }}</p>

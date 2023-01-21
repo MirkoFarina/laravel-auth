@@ -13,7 +13,7 @@
                 TABELLA PROGETTI
             </a>
         </div>
-        <form class="box-edit p-3" action=" {{ route('admin.project.store') }} " method="POST">
+        <form class="box-edit p-3" action=" {{ route('admin.project.store') }} " method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label @error('name') text-danger @enderror">TITOLO *</label>
@@ -36,23 +36,34 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="cover_image" class="form-label @error('cover_image') text-danger @enderror">URL image *</label>
-                <input type="text" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image"
-                    name="cover_image" value="{{ old('cover_image') }}" placeholder="URL ... ">
+                <label for="cover_image" class="form-label @error('cover_image') text-danger @enderror">UPLOAD image </label>
+                <input onchange="showImg(event)" type="file" class="form-control mb-2 @error('cover_image') is-invalid @enderror" id="cover_image"
+                    name="cover_image" placeholder=" UPLOAD IMG ... ">
                 @error('cover_image')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                 @enderror
+                <div class="show-img">
+                    <img id="image_thumb" src="" alt="">
+                </div>
             </div>
             <div class="mb-3">
                 <label for="summary" class="form-label">Descrizione: </label>
-                <textarea class="form-control" id="summary" name="summary" rows="3">{{ old('summary') }}
-                </textarea>
+                <textarea class="form-control" id="summary" name="summary" rows="3">{{old('summary') }}</textarea>
             </div>
             <div class="mb-3 text-center">
                 <button class="btn btn-success" type="submit"> INVIA </button>
             </div>
         </form>
     </div>
+
+
+    <script>
+        // RICHIAMO LA MIA FUNZIONE A CUI PASSO L'EVENTO CHE STAMPA L'ELEMENTO NEL TAG SRC
+        function showImg(event) {
+            const tagImage = document.getElementById('image_thumb');
+            tagImage.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
 @endsection
