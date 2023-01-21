@@ -23,7 +23,7 @@
                         <li class="ps-3">
                             <a class="{{Route::CurrentRouteName() === 'admin.project.create' ? 'active' : ''}}" href=" {{ route('admin.project.create') }} ">
                                 <i class="fa-solid fa-plus"></i>
-                                PROGETTO
+                                NUOVO
                             </a>
                         </li>
                     </ul>
